@@ -7,14 +7,34 @@
         mc:Ignorable="d"
         Title="Mosaico" Height="662" Width="675" MinHeight="470" MinWidth="450" Icon="starwars.ico">
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Background="#FF8B45C5"  Height="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Left"  Background="#FF8B45C5"  Width="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Bottom"  Background="#FF4BC545"  Height="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Right"  Background="#FF4BC545"  Width="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Bottom"  Background="#FFD85E26"  Height="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Left"  Background="#FFD85E26"  Width="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Top"  Background="#FFC11D94"  Height="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Right"  Background="#FFC11D94"  Width="100"></TextBlock>
-        <TextBlock DockPanel.Dock="Right"  Background="Black"></TextBlock>
+        <DockPanel.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+            </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="Left">
+                <Setter Property="DockPanel.Dock" Value="Left"/>
+                <Setter Property="Width" Value="100"/>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="Bottom">
+                <Setter Property="DockPanel.Dock" Value="Bottom"/>
+                <Setter Property="Height" Value="100"/>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="Top">
+                <Setter Property="DockPanel.Dock" Value="Top"/>
+                <Setter Property="Height" Value="100"/>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="Right">
+                <Setter Property="DockPanel.Dock" Value="Right"/>
+                <Setter Property="Width" Value="100"/>
+            </Style>
+        </DockPanel.Resources>
+        <TextBlock Style="{StaticResource Top}" Background="#FF8B45C5"></TextBlock>
+        <TextBlock Style="{StaticResource Left}"  Background="#FF8B45C5"  ></TextBlock>
+        <TextBlock Style="{StaticResource Bottom}"   Background="#FF4BC545" ></TextBlock>
+        <TextBlock Style="{StaticResource Right}" Background="#FF4BC545"  ></TextBlock>
+        <TextBlock Style="{StaticResource Bottom}"   Background="#FFD85E26"  ></TextBlock>
+        <TextBlock Style="{StaticResource Left}"  Background="#FFD85E26"  ></TextBlock>
+        <TextBlock Style="{StaticResource Top}"  Background="#FFC11D94" ></TextBlock>
+        <TextBlock Style="{StaticResource Right}"   Background="#FFC11D94" ></TextBlock>
+        <TextBlock Background="Black"></TextBlock>
     </DockPanel>
 </Window>
